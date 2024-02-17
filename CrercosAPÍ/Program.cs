@@ -1,3 +1,7 @@
+using CrercosAPÍ.DATA;
+using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext <CrecosDbContext>(options=> options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog =TiendaDB"));
 
 var app = builder.Build();
 
