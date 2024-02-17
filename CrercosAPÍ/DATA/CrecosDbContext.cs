@@ -5,7 +5,8 @@ namespace CrercosAPÍ.DATA
 {
     public class CrecosDbContext : DbContext //Heredamos la propiedad DbContext
     {
-        public CrecosDbContext()
+        public CrecosDbContext(DbContextOptions<CrecosDbContext> options)
+            :base (options)
         {
             
         }
